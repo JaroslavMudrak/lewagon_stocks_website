@@ -24,7 +24,7 @@ data_df = data_df.reset_index()
 # st.line_chart(data_df)
 
 #create chart:
-fig = sns.lineplot(x=data_df.index, y=data_df.Close)
+fig = sns.lineplot(x=data_df.Date, y=data_df.Close)
 
 #display chart using st.pyplot
 st.pyplot(plt.gcf())
