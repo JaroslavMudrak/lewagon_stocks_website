@@ -18,4 +18,4 @@ else:
 
 data_df = pd.DataFrame(data)
 
-print(type(data))
+print(type(data_df))
