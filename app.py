@@ -18,4 +18,4 @@ else:
 
 data_df = pd.DataFrame(data)
 
-st.write(data_df)
+st.line_chart(data_df)
