@@ -20,11 +20,13 @@ else:
 
 data_df = pd.DataFrame(data)
 data_df = data_df.reset_index()
+data_df = data_df.rename(columns={'index':'Date'})
+data_df['Date']= pd.to_datetime(data_df['Date'])
 
-# st.write(data_df)
+st.write(data_df)
 
 #create chart:
-sns.lineplot(x=data_df['index'], y=data_df.['Close']])
+sns.lineplot(x=data_df['Date'], y=data_df['Close'])
 
 #display chart using st.pyplot
 st.pyplot(plt.gcf())
