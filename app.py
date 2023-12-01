@@ -19,6 +19,7 @@ else:
     st.error(f"Error: Unable to fetch data from API. Status code: {response.status_code}")
 
 data_df = pd.DataFrame(data)
+data_df = data_df.reset_index()
 
 # st.line_chart(data_df)
 
