@@ -18,4 +18,4 @@ else:
 
 data_df = pd.DataFrame(data)
 
-print(type(data_df))
+st.write(data_df.head())
