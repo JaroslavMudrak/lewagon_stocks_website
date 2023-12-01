@@ -1,6 +1,8 @@
 import streamlit as st
 import requests
 import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 '''
 ## How amazing is this? Very much, indeed.
@@ -18,4 +20,10 @@ else:
 
 data_df = pd.DataFrame(data)
 
-st.line_chart(data_df)
+# st.line_chart(data_df)
+
+#create chart:
+sns.lineplot(x=data_df.index, y=data_df.Close)
+
+#display chart using st.pyplot
+st.pyplot()
