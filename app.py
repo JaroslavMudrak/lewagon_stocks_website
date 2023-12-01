@@ -23,7 +23,7 @@ data_df = pd.DataFrame(data)
 # st.line_chart(data_df)
 
 #create chart:
-sns.lineplot(x=data_df.index, y=data_df.Close)
+fig = sns.lineplot(x=data_df.index, y=data_df.Close)
 
 #display chart using st.pyplot
-st.pyplot()
+st.pyplot(fig)
