@@ -1,5 +1,5 @@
 import streamlit as st
 
 '''
-# Stock prediction
+# Stock prediction - How amazing is this? Very much!
 '''
