@@ -21,10 +21,10 @@ else:
 data_df = pd.DataFrame(data)
 data_df = data_df.reset_index()
 
-st.write(data_df)
+# st.write(data_df)
 
 #create chart:
-sns.lineplot(x=data_df.index, y=data_df.Close)
+sns.lineplot(x=data_df['index'], y=data_df.['Close']])
 
 #display chart using st.pyplot
 st.pyplot(plt.gcf())
