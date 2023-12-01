@@ -6,7 +6,7 @@ import pandas as pd
 ## How amazing is this? Very much, indeed.
 '''
 
-url = 'https://stocks-4dlywuyz2q-ew.a.run.app/predict?n=1'
+url = 'https://stocks-4dlywuyz2q-ew.a.run.app/predict?n=100'
 
 response = requests.get(url, verify=False)
 
@@ -18,4 +18,4 @@ else:
 
 data_df = pd.DataFrame(data)
 
-st.write(data_df.head())
+st.write(data_df)
