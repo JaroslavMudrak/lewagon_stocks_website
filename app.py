@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 '''
-# How amazing is this? Very much, indeed.
+## How amazing is this? Very much, indeed.
 '''
 
 url = 'https://stocks-4dlywuyz2q-ew.a.run.app/predict?n=2'
@@ -16,3 +16,9 @@ else:
     st.error(f"Error: Unable to fetch data from API. Status code: {response.status_code}")
 
 data
+
+st.write('Type of respnse')
+type(response)
+
+st.write('Type of data')
+type(data)
