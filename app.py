@@ -26,4 +26,4 @@ data_df = pd.DataFrame(data)
 fig = sns.lineplot(x=data_df.index, y=data_df.Close)
 
 #display chart using st.pyplot
-st.pyplot(fig)
+st.pyplot(plt.gcf())
