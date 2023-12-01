@@ -18,7 +18,7 @@ else:
 data
 
 st.write('Type of respnse')
-type(response)
+st.write(type(response))
 
 st.write('Type of data')
-type(data)
+st.write(type(data))
