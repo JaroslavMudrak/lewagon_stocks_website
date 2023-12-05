@@ -35,30 +35,49 @@ def get_all_date_cached():
 
 final_df, last_price = get_all_date_cached()
 
+
+
+
 ###################### Visuals ######################
 
 
-'''## Apple stock price ($)'''
 
-#Slider:
+################# 1. Sidebar ############################
 
-option = st.slider('Select a horizon', 1, 365, 180)
+st.sidebar.markdown(f'## Current Apple stock price:  {last_price}')
+
+
+
+
+st.sidebar.markdown(f"""
+    ## Predict price:
+    """)
+
+option = st.sidebar.slider('Select a horizon:', 1, 365, 180)
+
 horizon = len(get_actuals()) + option
-
 filtered_df = final_df.iloc[:horizon]
+# final_prices = filtered_df.iloc[-1].iloc[1:].rename(f'Predictions in {option} days').astype(int)
+final_prices = filtered_df.iloc[-1].iloc[1:].rename(f'Prediction by model:').astype(int)
 
-final_prices = filtered_df.iloc[-1].iloc[1:].rename(f'Predictions in {option} days').astype(int)
 
 
+#Numeric predictions:
+
+st.sidebar.markdown(f' ## Prediction in {option} days: {int(final_prices.mean())}')
+st.sidebar.write(final_prices)
+
+
+
+################# 2. Main board ############################
+
+
+'''## Apple stock price ($)'''
 # Chart
 sns.lineplot(data=filtered_df)
 st.pyplot(plt.gcf())
 
 
-#Numeric predictions:
-st.write('Current price: ', last_price)
-st.write('Average of our models: ', int(final_prices.mean()))
-st.write(final_prices)
 
 
 
