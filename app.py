@@ -4,7 +4,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-from models import get_FFT, get_actuals, get_exp_smoothing, get_prophet_basic
+from models import get_FFT, get_actuals, get_exp_smoothing, get_prophet_basic, get_nbeats
 
 
 
@@ -16,6 +16,7 @@ def get_all_date_cached():
     df_fft = get_FFT()
     df_exp = get_exp_smoothing()
     df_basic_prophet = get_prophet_basic()
+    df_nbeats = get_nbeats()
 
 
 
@@ -24,6 +25,7 @@ def get_all_date_cached():
     final_df = pd.concat([df_actuals, df_fft], axis=1)
     final_df = pd.concat([final_df, df_exp], axis=1)
     final_df = pd.concat([final_df, df_basic_prophet], axis=1)
+    final_df = pd.concat([final_df, df_nbeats], axis=1)
 
     final_df.index = pd.to_datetime(final_df.index)
 
